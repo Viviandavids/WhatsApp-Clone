@@ -6,8 +6,8 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
+import com.example.wmtapp.adapter.MainPageAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
                 else -> tab.text ="Chat"
             }
         }.attach()
+        viewPager.currentItem = 1
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

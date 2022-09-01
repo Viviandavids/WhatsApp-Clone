@@ -1,4 +1,4 @@
-package com.example.wmtapp
+package com.example.wmtapp.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import android.content.Context
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.wmtapp.R
+import com.example.wmtapp.SampleData
 
 class ListOfFriendsAdapter(val context: Context): RecyclerView.Adapter<ListOfFriendsAdapter.LFViewHolder>(){
     private val sampleData = SampleData()
