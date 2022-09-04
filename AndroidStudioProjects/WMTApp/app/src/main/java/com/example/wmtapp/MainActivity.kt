@@ -53,7 +53,8 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "New Group click", Toast.LENGTH_LONG).show()
                 return true
             }
-            R.id.broadcast_lists->{
+            R.id.new_broadcast->{
+                goToNewBroadcastActivity()
                 Toast.makeText(this, "Broadcast Lists click", Toast.LENGTH_LONG).show()
                 return true
             }
@@ -78,5 +79,8 @@ class MainActivity : AppCompatActivity() {
     } private fun goToNewGroupActivity(){
         val i = Intent(this, NewGroupActivity::class.java)
         startActivity(i)
+    } private fun goToNewBroadcastActivity(){
+        val a =Intent(this,NewBroadcastActivity::class.java)
+        startActivity(a)
     }
 }

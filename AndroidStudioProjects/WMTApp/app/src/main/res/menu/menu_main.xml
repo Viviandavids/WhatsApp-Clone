@@ -24,6 +24,6 @@
         android:id="@+id/new_group"
         android:title="New Group" />
     <item
-        android:id="@+id/broadcast_lists"
-        android:title="Broadcast Links" />
+        android:id="@+id/new_broadcast"
+        android:title="New Broadcast" />
 </menu>

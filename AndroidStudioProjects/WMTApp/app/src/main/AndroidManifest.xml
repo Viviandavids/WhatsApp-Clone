@@ -11,6 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WMTApp">
+        <activity android:name=".NewBroadcastActivity"
+            android:exported="false"
+            android:label="New Broadcast"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".NewGroupActivity"
             android:exported="false"
