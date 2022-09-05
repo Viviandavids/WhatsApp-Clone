@@ -7,21 +7,29 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tab"
-        android:layout_height="wrap_content"
+    // The toolbar is responsible for showing the action bar
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        app:tabTextColor="@color/white"
-        app:tabIconTint="@color/white"
-        app:tabIndicatorColor="@color/white"
-        android:background="@color/green"
-        android:layout_gravity="top"/>
-
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            app:tabTextColor="@color/white"
+            app:tabIconTint="@color/white"
+            app:tabIndicatorColor="@color/white"
+            android:background="@color/green"
+            android:layout_gravity="top"/>
+    </com.google.android.material.appbar.AppBarLayout>
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="55dp"/>
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"/>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

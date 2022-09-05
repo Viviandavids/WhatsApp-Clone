@@ -13,7 +13,7 @@ class ListOfFriendsAdapter(val context: Context): RecyclerView.Adapter<ListOfFri
     private val sampleData = SampleData()
     private val listOfFriends = sampleData.LIST_OF_FRIENDS
 
-
+    // This function return the item view
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LFViewHolder {
        val itemView = LayoutInflater.from(context).inflate(R.layout.list_of_friend_layout, parent, false)
         return LFViewHolder(itemView)

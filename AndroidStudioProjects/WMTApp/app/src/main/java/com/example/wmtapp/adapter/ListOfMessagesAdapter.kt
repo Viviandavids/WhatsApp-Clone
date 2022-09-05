@@ -1,11 +1,13 @@
 package com.example.wmtapp.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.wmtapp.ChatActivity
 import com.example.wmtapp.R
 import com.example.wmtapp.SampleMessages
 import com.example.wmtapp.model.Message
@@ -23,6 +25,11 @@ class ListOfMessagesAdapter(val context: Context) : RecyclerView.Adapter<ListOfM
     override fun onBindViewHolder(holder: MsgViewHolder, position: Int) {
         holder.username.text = listOfMessages[position].username
         holder.message.text = listOfMessages[position].message
+
+        holder.itemView.setOnClickListener{
+            val intent = Intent(context, ChatActivity::class.java)
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int = listOfMessages.size
