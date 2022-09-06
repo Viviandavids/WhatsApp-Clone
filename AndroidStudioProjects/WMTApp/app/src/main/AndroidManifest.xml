@@ -14,7 +14,8 @@
         android:theme="@style/Theme.WMTApp">
         <activity
             android:name=".ChatActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".NewBroadcastActivity"
             android:exported="false"
