@@ -12,10 +12,8 @@ import com.example.wmtapp.R
 import com.example.wmtapp.SampleChats
 import com.example.wmtapp.model.Message
 
-class ChatsAdapter(val context: Context, userName: String): RecyclerView.Adapter<ChatsAdapter.ChatsViewHolder>() {
-    val sampleChats = SampleChats()
-    val chat: Chats? = sampleChats.getChatsOf(userName)
-    val listOfMessages: List<Message> = chat!!.messages
+class ChatsAdapter(val context: Context, val listOfMessages: List<Message>): RecyclerView.Adapter<ChatsAdapter.ChatsViewHolder>() {
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatsViewHolder {
         val itemView: View = LayoutInflater.from(context).inflate(R.layout.chats_layout, parent, false)
