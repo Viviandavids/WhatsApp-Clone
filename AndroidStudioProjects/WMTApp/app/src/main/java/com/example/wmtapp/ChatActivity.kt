@@ -61,6 +61,7 @@ class ChatActivity : AppCompatActivity() {
             listOfMessages.add(message)
             setupChatRecyclerview(listOfMessages)
 
+            // This function help to ensure that after a message is sent the textField is empty
             messageTyped.setText("")
         }
 
