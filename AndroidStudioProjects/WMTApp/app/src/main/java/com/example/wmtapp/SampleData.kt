@@ -1,8 +1,20 @@
 package com.example.wmtapp
 
+import com.example.wmtapp.model.Chats
 import com.example.wmtapp.model.Message
+import com.example.wmtapp.model.Status
 import com.example.wmtapp.model.User
 
+class SampleStatus{
+    val LIST_OF_STATUS: List<Status> = listOf(
+        Status("Samuel Eze", "1 hour ago"),
+        Status("Victor David", "2 hour ago"),
+        Status("Muna udeh", "3 hour ago"),
+        Status("Joan Okereke", "4 hour ago"),
+        Status("Isaac popoola", "5 hour ago"),
+        Status("Bright Eze", "6 hour ago"),
+    )
+}
 class SampleData {
     val LIST_OF_FRIENDS: List<User> = listOf(
         User("Damola Agboola", "Hi There, I am using Whatsapp"),

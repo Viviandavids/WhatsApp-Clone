@@ -3,11 +3,11 @@ package com.example.wmtapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wmtapp.adapter.ChatsAdapter
+import com.example.wmtapp.model.Chats
 import com.example.wmtapp.model.Message
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.text.SimpleDateFormat

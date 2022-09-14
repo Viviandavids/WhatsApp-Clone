@@ -1,5 +1,6 @@
 package com.example.wmtapp
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,6 +12,7 @@ import com.example.wmtapp.adapter.MainPageAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import androidx.appcompat.widget.Toolbar
+import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
 
 class MainActivity : AppCompatActivity() {
     //This is an initialization of the Toolbar
@@ -19,10 +21,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tablayout: TabLayout
     //This is an initialization of the ViewPager2
     private lateinit var viewPager: ViewPager2
+    private lateinit var context: Context
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        context = this
 
         toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
@@ -54,7 +59,19 @@ class MainActivity : AppCompatActivity() {
         viewPager.currentItem = 1
         //This sets the "Chat" as the Home tab.
 
+        viewPager.registerOnPageChangeCallback(
+            object: ViewPager2.OnPageChangeCallback() {
+                override fun onPageSelected(position: Int) {
+                    super.onPageSelected(position)
+                    if (position == 0){
+                        val intent = Intent(context, CameraActivity::class.java)
+                        startActivity(intent)
+                    }
+                }
+            }
+        )
     }
+
     //This is responsible for making the menu items visible and also connects the menu page to the activity to make it visible to the user
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)

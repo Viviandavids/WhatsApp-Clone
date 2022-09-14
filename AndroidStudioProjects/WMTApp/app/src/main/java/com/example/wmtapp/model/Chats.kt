@@ -1,4 +1,4 @@
-package com.example.wmtapp
+package com.example.wmtapp.model
 
 import com.example.wmtapp.model.Message
 

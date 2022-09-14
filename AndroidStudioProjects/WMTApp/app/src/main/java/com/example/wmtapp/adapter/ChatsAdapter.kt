@@ -7,9 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.wmtapp.Chats
 import com.example.wmtapp.R
-import com.example.wmtapp.SampleChats
 import com.example.wmtapp.model.Message
 
 class ChatsAdapter(val context: Context, val listOfMessages: List<Message>): RecyclerView.Adapter<ChatsAdapter.ChatsViewHolder>() {

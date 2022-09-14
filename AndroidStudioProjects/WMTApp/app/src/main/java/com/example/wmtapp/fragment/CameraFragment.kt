@@ -1,6 +1,7 @@
 package com.example.wmtapp.fragment
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
@@ -16,14 +17,13 @@ import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.example.wmtapp.CameraActivity
 import com.example.wmtapp.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 class CameraFragment : Fragment() {
-    private lateinit var cameraPreview: PreviewView
-    private lateinit var takePhotoBtn: FloatingActionButton
-    private lateinit var imageCaptured: ImageCapture
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,57 +31,6 @@ class CameraFragment : Fragment() {
     ): View? {
 
         return inflater.inflate(R.layout.fragment_camera, container, false)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        cameraPreview = view.findViewById(R.id.cameraPreview)
-        takePhotoBtn = view.findViewById(R.id.takePhotoBtn)
-
-        if(allPermissionGranted()){
-            // start camera
-            startCamera()
-        } else {
-            // request permission
-            ActivityCompat.requestPermissions(
-                requireActivity(), arrayOf(Manifest.permission.CAMERA), 111
-            )
-        }
-    }
-
-    private fun startCamera() {
-        val cameraProviderFuture = ProcessCameraProvider.getInstance(requireContext())
-
-        cameraProviderFuture.addListener({
-                // bind to lifecycle
-                val cameraProvider = cameraProviderFuture.get()
-                val preview = Preview.Builder().build()
-                preview.setSurfaceProvider(cameraPreview.surfaceProvider)
-                imageCaptured = ImageCapture.Builder().build()
-
-                // select the camera to use
-                val cameraSelected = CameraSelector.DEFAULT_BACK_CAMERA
-
-                try {
-                    cameraProvider.unbindAll()
-
-                    cameraProvider.bindToLifecycle(
-                        this, cameraSelected, preview, imageCaptured
-                    )
-                } catch (e: Exception) {
-                    Log.e("WMT Chat", "Camera Binding Failed $e")
-                    Toast.makeText(
-                        requireContext(),
-                        "Camera Binding Unsuccessful",
-                        Toast.LENGTH_LONG
-                    ).show()
-                }
-            }, ContextCompat.getMainExecutor(requireContext())
-
-        )
-    }
-
-    private fun allPermissionGranted(): Boolean{
-        return ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED
     }
 
 }

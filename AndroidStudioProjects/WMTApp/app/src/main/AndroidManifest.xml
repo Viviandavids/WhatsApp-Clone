@@ -4,7 +4,7 @@
     package="com.example.wmtapp">
 
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.hardware.camera.flash"/>
+    <uses-permission android:name="android.hardware.camera.flash" />
 
     <application
         android:allowBackup="true"
@@ -12,12 +12,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.WMTApp"
-        >
+        android:theme="@style/Theme.WMTApp">
+        <activity
+            android:name=".CameraActivity"
+            android:exported="false" />
         <activity
             android:name=".ChatActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".NewBroadcastActivity"
             android:exported="false"
