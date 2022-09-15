@@ -66,6 +66,7 @@ class MainActivity : AppCompatActivity() {
                     if (position == 0){
                         val intent = Intent(context, CameraActivity::class.java)
                         startActivity(intent)
+                        viewPager.currentItem =1
                     }
                 }
             }

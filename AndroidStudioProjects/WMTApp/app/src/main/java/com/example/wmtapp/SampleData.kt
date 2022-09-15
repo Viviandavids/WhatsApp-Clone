@@ -29,12 +29,12 @@ class SampleData {
 class SampleMessages{
     val LIST_OF_MESSAGES: List<Message> = listOf(
         Message("Vivian David", "19:00", "I am so hungry, brooo", "me"),
-        Message("Wura", "15:00", "I am so hungry brooo", "me"),
-        Message("Ayomide", "07:00", "I am so hungry brooo", "me"),
-        Message("Emmanuel", "19:00", "I am so hungry brooo", "me"),
-        Message("Eseoghene", "13:00", "I am so hungry brooo", "me"),
-        Message("Victor", "10:00", "I am so hungry brooo", "me"),
-        Message("Esther", "12:00", "I am so hungry brooo", "me"),
+        Message("Wura", "15:00", "How are you doing", "me"),
+        Message("Ayomide", "07:00", "I sent you some files", "me"),
+        Message("Emmanuel", "19:00", "What time will you be around", "me"),
+        Message("Eseoghene", "13:00", "How is your day going", "me"),
+        Message("Victor", "10:00", "Come to the store later", "me"),
+        Message("Esther", "12:00", "Stop by at the market when coming home", "me"),
     )
     fun getListOfReceivedMessages(): List<Message>{
         return LIST_OF_MESSAGES.filter { message ->
