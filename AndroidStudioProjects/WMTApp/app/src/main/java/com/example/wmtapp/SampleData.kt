@@ -1,10 +1,17 @@
 package com.example.wmtapp
 
-import com.example.wmtapp.model.Chats
-import com.example.wmtapp.model.Message
-import com.example.wmtapp.model.Status
-import com.example.wmtapp.model.User
+import com.example.wmtapp.model.*
 
+class SampleCalls{
+    val LIST_OF_CALLS: MutableList<CallsModel> = mutableListOf(
+            CallsModel("Joan Okereke", "September 12,12:11" ),
+            CallsModel("Anthony umeh", "September 12,12:11" ),
+            CallsModel("Esther David", "September 13,12:11" ),
+            CallsModel("Victor Eze", "September 14,12:11" ),
+            CallsModel("Ezinne udeh", "September 15,12:11" ),
+
+    )
+}
 class SampleStatus{
     val LIST_OF_STATUS: List<Status> = listOf(
         Status("Samuel Eze", "1 hour ago"),

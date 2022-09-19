@@ -72,65 +72,6 @@ class MainActivity : AppCompatActivity() {
             }
         )
     }
-
-    //This is responsible for making the menu items visible and also connects the menu page to the activity to make it visible to the user
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-
-    }
-    // This enables the user to be able to click on the option menu items
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // This acts as a filter to identify the particular menu item that was click so as to perform a specific action for each selected menu item.
-        when(item.itemId){
-            R.id.search ->{
-                Toast.makeText(this, "Search click", Toast.LENGTH_LONG).show()
-                return true
-            }
-            R.id.new_group ->{
-                goToNewGroupActivity()
-                // Here the function goToNewGroup is called any time the New Group menu item is selected.
-                Toast.makeText(this, "New Group click", Toast.LENGTH_LONG).show()
-                return true
-            }
-            R.id.new_broadcast->{
-                goToNewBroadcastActivity()
-                // Here the function goToNewBroadCast is called any time the New Group menu item is selected.
-                Toast.makeText(this, "Broadcast Lists click", Toast.LENGTH_LONG).show()
-                return true
-            }
-            R.id.linked_devices -> {
-                Toast.makeText(this, "Linked Devices", Toast.LENGTH_LONG).show()
-                return true
-            }
-            R.id.starred_messages ->{
-                Toast.makeText(this, "Starred Messages", Toast.LENGTH_LONG).show()
-                return true
-            }
-            R.id.settings -> {
-                Toast.makeText(this, "settings", Toast.LENGTH_LONG).show()
-                return true
-            }
-            else-> {
-                return false
-            }
-
-        }
-
-    } private fun goToNewGroupActivity(){
-        val i = Intent(this, NewGroupActivity::class.java)
-        startActivity(i)
-        // The Intent makes navigation from one activity to another possible. In this casa from Main Activity to New Group Activity
-        // Intent is a class so here an object "i" of the intent class was created.
-        // The start or startActivity  function is called in order to achieve the navigation process
-
-    } private fun goToNewBroadcastActivity(){
-        val a =Intent(this,NewBroadcastActivity::class.java)
-        startActivity(a)
-        // The Intent makes navigation from one activity to another possible. In this casa from Main Activity to New BroadCast Activity
-        // Intent is a class so here an object "i" of the intent class was created.
-        // The start or startActivity  function is called in order to achieve the navigation process
-    }
 }
 // Note we went to the manifests folder where the new activity tag was and added two attributes;
 // i label; was responsible for giving the new activity a title "New Group"

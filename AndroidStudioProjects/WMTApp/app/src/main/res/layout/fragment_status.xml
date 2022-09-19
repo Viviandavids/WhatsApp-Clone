@@ -28,7 +28,7 @@
         app:layout_constraintRight_toRightOf="parent"
         android:src="@drawable/ic_baseline_edit_24"
         app:tint="@color/black"
-        android:layout_marginRight="15dp"
+        android:layout_marginEnd="15dp"
         android:layout_marginBottom="5dp"
         app:backgroundTint="@color/grey"/>
 
