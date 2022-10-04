@@ -35,13 +35,13 @@ class SampleData {
 
 class SampleMessages{
     val LIST_OF_MESSAGES: List<Message> = listOf(
-        Message("Vivian David", "19:00", "I am so hungry, brooo", "me"),
-        Message("Wura", "15:00", "How are you doing", "me"),
-        Message("Ayomide", "07:00", "I sent you some files", "me"),
-        Message("Emmanuel", "19:00", "What time will you be around", "me"),
-        Message("Eseoghene", "13:00", "How is your day going", "me"),
-        Message("Victor", "10:00", "Come to the store later", "me"),
-        Message("Esther", "12:00", "Stop by at the market when coming home", "me"),
+        Message("Vivian David", "19:00", "I am so hungry, brooo", "me", R.drawable.avatar_2),
+        Message("Wura", "15:00", "How are you doing", "me", R.drawable.avatar_3),
+        Message("Ayomide", "07:00", "I sent you some files", "me", R.drawable.avatar_4),
+        Message("Emmanuel", "19:00", "What time will you be around", "me", R.drawable.avatar_5),
+        Message("Eseoghene", "13:00", "How is your day going", "me", R.drawable.avatar_3),
+        Message("Victor", "10:00", "Come to the store later", "me", R.drawable.avatar_6),
+        Message("Esther", "12:00", "Stop by at the market when coming home", "me", R.drawable.avatar_7),
     )
     fun getListOfReceivedMessages(): List<Message>{
         return LIST_OF_MESSAGES.filter { message ->
@@ -52,13 +52,13 @@ class SampleMessages{
 class SampleChats{
     val LIST_OF_CHATS: List<Chats> = listOf(
         Chats("Vivian David", listOf(
-            Message("me", "12:00", "I am so hungry brooo", "Vivian David"),
-            Message("Vivian David", "10:00", "I am so hungry brooo", "me"),
+            Message("me", "12:00", "I am so hungry brooo", "Vivian David", R.drawable.avatar_2),
+            Message("Vivian David", "10:00", "I am so hungry brooo", "me", R.drawable.avatar_3),
 
         )),
         Chats("Esther", listOf(
-            Message("Esther", "15:00", "I am so hungry brooo", "me"),
-            Message("me", "15:00", "I am so hungry brooo", "Esther"),
+            Message("Esther", "15:00", "I am so hungry brooo", "me", R.drawable.avatar_7),
+            Message("me", "15:00", "I am so hungry brooo", "Esther", R.drawable.avatar_2),
         ))
     )
     fun getChatsOf(username: String): Chats? {

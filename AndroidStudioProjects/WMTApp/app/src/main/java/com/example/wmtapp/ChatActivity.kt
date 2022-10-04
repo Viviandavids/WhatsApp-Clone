@@ -48,6 +48,8 @@ class ChatActivity : AppCompatActivity() {
             // This simple date format is referenced to create a specific data format
             val sdf = SimpleDateFormat("h:mm a")
             val time: String = sdf.format(Date())
+            // should get the specific avatar
+            val defaultAvatar= R.drawable.avatar_1
 
             // in order to update the listOfMessages above so that new message sent to the chat will appear
             // Create a message type
@@ -56,7 +58,9 @@ class ChatActivity : AppCompatActivity() {
                 time = time,
                 message = userInput,
                 receiver = username,
+                avatarImage = defaultAvatar
             )
+
             // Then add to list
             listOfMessages.add(message)
             setupChatRecyclerview(listOfMessages)
